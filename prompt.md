@@ -21,3 +21,6 @@ speakers:
   Ishita Sequeira: https://avatars.sched.co/c/b9/13665467/avatar.jpg?636
 
 https://avatars.sched.co/8/76/17971211/avatar.jpg?aae
+
+
+I want to deploy the single file public website index.html on aws using s3, I want the url to have somewhere argocon-eu-2025 in it, you have access only to file index.html and aws cli
