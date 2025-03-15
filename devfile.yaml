@@ -1,0 +1,10 @@
+schemaVersion: 2.0.0
+components:
+  - name: dev
+    container:
+      image: public.ecr.aws/aws-mde/universal-image:latest
+commands:
+  - id: test
+    exec:
+      component: dev
+      commandLine: "python3 -m http.server 8080"
