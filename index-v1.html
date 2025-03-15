@@ -242,7 +242,6 @@
     .speaker-image {
       width: 100%;
       height: 180px;
-      object-fit: cover;
       border-bottom: 3px solid var(--primary-color);
       background-color: var(--primary-color);
       display: flex;
@@ -250,23 +249,34 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
+      border-radius: 50%;  /* Make it circular */
+      width: 180px;       /* Make width equal to height for perfect circle */
+      margin: 0 auto;     /* Center the circle in its container */
     }
 
-    .speaker-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 50%;  /* Make the image circular */
+  }
 
     .speaker-image img:hover {
       transform: scale(1.05);
     }
 
-    .speaker-image .placeholder {
-      font-size: 80px;
-      color: rgba(255, 255, 255, 0.3);
-    }
+/* Update the placeholder styling for circular shape */
+.speaker-image .placeholder {
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
     .speaker-info {
       padding: 15px;
@@ -312,23 +322,23 @@
     .back-to-top:hover {
       transform: translateY(-3px);
     }
-    
+
     .material-symbols {
       font-family: Arial, sans-serif;
       display: inline-block;
       vertical-align: middle;
       line-height: 1;
     }
-    
+
     p {
       margin-bottom: 1rem;
     }
-    
+
     ul {
       margin-left: 1.5rem;
       margin-bottom: 1rem;
     }
-    
+
     li {
       margin-bottom: 0.5rem;
     }
@@ -339,7 +349,7 @@
     <header>
       <h1 class="main-title">ArgoCon 2025 - Must-See Talks</h1>
       <p class="subtitle">Join us for these exciting sessions to enhance your Argo knowledge!</p>
-      
+
       <div class="navigation-controls">
         <button id="prev-talk" class="nav-button">← Previous</button>
         <div class="talk-counter">
@@ -1236,7 +1246,7 @@
           </div>
         </div>
       </section>
-      
+
       <!-- Talk 21 -->
       <section id="talk-21" class="talk-card">
         <div class="talk-header">
@@ -1465,12 +1475,12 @@
       const talkCards = document.querySelectorAll('.talk-card');
       const totalTalks = talkCards.length;
       let currentTalkIndex = 0;
-      
+
       // Navigation elements
       const prevButton = document.getElementById('prev-talk');
       const nextButton = document.getElementById('next-talk');
       const talkSelector = document.getElementById('talk-selector');
-      
+
       // Populate talk selector dropdown
       talkCards.forEach((card, index) => {
         const title = card.querySelector('.talk-title').textContent;
@@ -1480,7 +1490,7 @@
         option.textContent = `${index + 1}: ${truncatedTitle}`;
         talkSelector.appendChild(option);
       });
-      
+
       // Function to show only the current talk
       function showCurrentTalk() {
         talkCards.forEach((card, index) => {
@@ -1490,21 +1500,21 @@
             card.style.display = 'none';
           }
         });
-        
+
         // Update the talk selector
         talkSelector.value = currentTalkIndex;
-        
+
         // Update button states
         prevButton.disabled = currentTalkIndex === 0;
         nextButton.disabled = currentTalkIndex === totalTalks - 1;
-        
+
         // Scroll to top of the talk
         window.scrollTo({
           top: document.querySelector('header').offsetTop,
           behavior: 'smooth'
         });
       }
-      
+
       // Event listeners for navigation
       prevButton.addEventListener('click', function() {
         if (currentTalkIndex > 0) {
@@ -1512,22 +1522,22 @@
           showCurrentTalk();
         }
       });
-      
+
       nextButton.addEventListener('click', function() {
         if (currentTalkIndex < totalTalks - 1) {
           currentTalkIndex++;
           showCurrentTalk();
         }
       });
-      
+
       talkSelector.addEventListener('change', function() {
         currentTalkIndex = parseInt(this.value);
         showCurrentTalk();
       });
-      
+
       // Initialize: show only the first talk
       showCurrentTalk();
-      
+
       // Back to top functionality
       const backToTopButton = document.querySelector('.back-to-top');
       backToTopButton.addEventListener('click', function(e) {
