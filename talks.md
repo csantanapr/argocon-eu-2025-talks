@@ -27,12 +27,6 @@ speakers:
   Ishita Sequeira: https://avatars.sched.co/c/b9/13665467/avatar.jpg?636
 
 
-title: Argo Trivia! - Katie Lamkin-Fulsher, Program Committee Member
-url: https://colocatedeventseu2025.sched.com/event/1u5eA/argo-trivia-katie-lamkin-fulsher-program-committee-member?iframe=no
-speakers:
-  Katie Lamkin-Fulsher: https://colocatedeventseu2025.sched.com/speaker/katielamkin
-
-
 title: A Million Ways To Promote Changes Between Environments
 url: https://colocatedeventseu2025.sched.com/event/1u5dI/a-million-ways-to-promote-changes-between-environments-dan-garfield-codefresh-by-octopus-deploy-viktor-farcic-upbound?iframe=no
 speakers:
