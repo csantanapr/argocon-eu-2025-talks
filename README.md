@@ -4,6 +4,8 @@ This website was developed using genAI, using Free [Amazon Q](https://aws.amazon
 
 Take a look here for the result https://csantanapr.github.io/argocon-eu-2025-talks/
 
-<a href="https://csantanapr.github.io/argocon-eu-2025-talks/">
+
+<a href="https://csantanapr.github.io/argocon-eu-2025-talks/" target="_blank">
   <img src="preview.jpg" alt="Preview">
 </a>
+
